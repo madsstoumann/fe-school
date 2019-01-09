@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<head>
+	<title>Autosuggest Demo</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <link href="/assets/css/form.css" rel="stylesheet">
+</head>
+<body>
+    
+    <form class="form" id="form">
+        <input name="city" class="field__input" />
+        <input name="zip" class="field__input" />
+        
+        <fieldset class="form__fieldset">
+			<legend class="form__legend">AutoSuggest</legend>
+
+            <div class="field">
+				<label for="as1" class="field__label">
+                    <strong class="field__label__text">Dawa address-lookup</strong>
+                </label>
+                <input type="search"
+                    autocomplete="new-password"
+                    class="field__input"
+                    data-js="autoSuggest"
+                    data-auto-api="//dawa.aws.dk/adresser/autocomplete?side=1&per_side=10&q="
+                    data-auto-key="tekst"
+                    id="as1"
+                    name="search"
+                    minlength="2"
+                    maxlength="25"
+                    required
+                />
+            </div>
+    	</fieldset>
+	</form>
+	<script type="module">
+        /* Import module */
+        import autoSuggest from '/assets/js/autoSuggest.js';
+        
+        /* Run init-function from module */
+        autoSuggest('[data-js="autoSuggest"]');
+        
+        const form = document.getElementById('form');
+        // form.addEventListener('input', (event)=> console.log(event.target.value))
+        
+        form.elements.search.addEventListener('autoSuggestSelect', (event) => { 
+            const obj = event.detail;
+            form.elements.city.value = obj.adresse.postnrnavn;
+            form.elements.zip.value = obj.adresse.postnr;
+        });
+	</script>
+</body>
+</html>

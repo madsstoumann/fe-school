@@ -1,0 +1,86 @@
+/* Demo */
+html {
+    font-size: 100%;
+}
+body {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    margin: 1rem;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+.field {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.field__input {
+    font-family: inherit;
+    font-size: inherit;
+    flex: 1;
+    padding: .75rem;
+    height: 3rem;
+    margin-bottom: 1rem;
+    border: 1px solid #aaa;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+.field__label {
+    display: flex;
+	flex: 0 0 100%;
+	height: 1.5rem;
+}
+
+.field__label__text {    
+    display: inline-block;
+    font-weight: 600;
+    margin-right: .5rem;
+}
+
+.field__legend {
+    position: absolute;
+    top: -1em;
+    left: 0;
+    width: 100%;
+}
+
+.field__panel {
+    position: absolute;
+    top: 4.5rem;
+    left: 0;
+    width: 100%;
+    padding: .5rem 0 0 0;
+    margin: 0;
+    max-height: 40em;
+    list-style-type: none;
+    border: 1px solid #AAA;
+    background-color: #FFF;
+    z-index: 1;    
+}
+
+.field__panel__item {
+    padding: .5rem;
+}
+
+.field__panel__item:focus {
+    background: lightgoldenrodyellow;
+    outline: 0;
+}
+
+.form__fieldset {
+    padding: 0 1rem;
+    border: 1px solid #AAA;
+    background: #EEE;
+}
+
+.form__legend {
+    margin-bottom: 1rem;
+    padding: .5rem 1rem;
+    color: #FEFEFE;
+    background: #454545;
+    font-weight: 500;
+}

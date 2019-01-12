@@ -4,14 +4,11 @@
 	<title>Autosuggest Demo</title>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <link href="/assets/css/form.css" rel="stylesheet">
+    <link href="/es6/assets/css/form.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     
     <form class="form" id="form">
-        <input name="city" class="field__input" />
-        <input name="zip" class="field__input" />
-        
         <fieldset class="form__fieldset">
 			<legend class="form__legend">AutoSuggest</legend>
 
@@ -32,11 +29,33 @@
                     required
                 />
             </div>
+
+            <div class="field">
+				<label for="zip" class="field__label">
+                    <strong class="field__label__text">Zipcode</strong>
+                </label>
+                <input type="text"
+                    class="field__input"
+                    id="zip"
+                    name="zip"
+                />
+            </div>
+
+            <div class="field">
+				<label for="city" class="field__label">
+                    <strong class="field__label__text">City</strong>
+                </label>
+                <input type="text"
+                    class="field__input"
+                    id="city"
+                    name="city"
+                />
+            </div>
     	</fieldset>
 	</form>
 	<script type="module">
         /* Import module */
-        import autoSuggest from '/assets/js/autoSuggest.js';
+        import autoSuggest from '/es6/assets/js/autoSuggest.js';
         
         /* Run init-function from module */
         autoSuggest('[data-js="autoSuggest"]');

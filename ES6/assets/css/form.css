@@ -48,7 +48,7 @@ body * {
     width: 100%;
 }
 
-.field__panel {
+.field__list {
     position: absolute;
     top: 4.5rem;
     left: 0;
@@ -62,11 +62,11 @@ body * {
     z-index: 1;    
 }
 
-.field__panel__item {
+.field__list__item {
     padding: .5rem;
 }
 
-.field__panel__item:focus {
+.field__list__item:focus {
     background: lightgoldenrodyellow;
     outline: 0;
 }

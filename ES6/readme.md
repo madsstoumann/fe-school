@@ -23,4 +23,12 @@ Prerequisites:
 
 5. Add code to the `hideInput`-method, so the function can be called with `true` or `false` to hide `this.list`.
 
-6. `fetch` some data in `handleInput`
+6. `fetch` some data (`this.settings.api` + input.value) in `handleInput`
+
+7. Ouput data, show `this.list`. Handle "no matches".
+
+8. Add eventListener for list, send event `autoSuggestSelect` on click.
+
+9. Add "outside click"-handler
+
+10. Highlight search-terms, import `mark`-function from `common.js`

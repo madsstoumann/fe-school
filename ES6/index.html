@@ -58,10 +58,10 @@
         import autoSuggest from '/es6/assets/js/autoSuggest.js';
         
         /* Run init-function from module */
-        autoSuggest('[data-js="autoSuggest"]');
+        autoSuggest('[data-js*="autoSuggest"]');
         
         const form = document.getElementById('form');
-        // form.addEventListener('input', (event)=> console.log(event.target.value))
+        form.addEventListener('input', (event)=> console.log(event.target.value))
         
         form.elements.search.addEventListener('autoSuggestSelect', (event) => { 
             const obj = event.detail;

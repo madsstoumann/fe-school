@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<head>
+  <title>SVG JavaScript</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 3rem;
+    }
+    .chart { 
+      background-color: #eee;
+    }
+    .chart polyline {
+      fill: none;
+      stroke: #e20647;
+      stroke-width: 2;
+    }
+    rect {
+      transform: translateY(100%);
+      transition: .3s transform ease;
+    }
+
+    .animate rect {
+      transform: translateY(0);
+    }
+  </style>
+</head>
+  <body>
+    <div id="app"></div>  
+  </body>
+
+  <script>
+
+    /* Andrew Dytons Solution: */
+    const data = [50, 45, 25, 90, 88, 65, 45, 76, 25, 52, 33, 34, 45, 75, 65, 88, 26, 55];
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", 'svg');
+    const [width, height] = [500, 100];
+
+    svg.classList.add('chart');
+    svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+
+    let pos = 0;
+    const barWidth = 500 / data.length;
+    data.forEach(point => {
+      const rect = document.createElementNS("http://www.w3.org/2000/svg", 'rect');
+      rect.setAttribute('height', point);
+      rect.setAttribute('width', barWidth);
+      rect.setAttribute('x', pos);
+      rect.setAttribute('y', 100 - point);
+      rect.setAttribute('fill', `hsla(${pos / 500 * 360}, 100%, 40%, 1)`);
+      rect.setAttribute('style', `transition-delay: ${pos * .002}s`);
+      svg.appendChild(rect);
+      pos += barWidth;
+    });
+
+    document.getElementById('app').appendChild(svg);
+    window.setTimeout(() => {
+      svg.classList.add('animate');
+    }, 250);
+
+    function getPoints(data, width, height) {
+      const xWidth = width / (data.length - 1);
+      return data.map((item, index) => [xWidth * index, height - item]).join('\n');
+    }
+
+
+  </script>
+</html>

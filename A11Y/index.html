@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+	<head>
+		<title>A11y Menu</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="description" content="An accessible main navigation, beautiful without styles even">
+		<style>
+			/* Inline styles to use, until external styles have been loaded */
+			.c-mn__item--2 { margin-left: 1em; }
+			.c-mn__item-link--1 { display: block; margin-left: 1em; }
+			.c-mn__item-link--3 { display: block; margin-left: 2em; }
+		</style>
+		<!-- <link href="/a11y-menu.css" rel="stylesheet"> -->
+	</head>
+	<body>
+		<header>
+			<nav class="c-mn" aria-label="Main Navigation" data-js="a11yMenu" data-menu-data="/demo.json" data-mega-menu=":false"></nav>
+		</header>
+		<main>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quisquam, temporibus incidunt quidem, nobis molestias et commodi, accusantium dolorum consequatur placeat sed harum repellat illo fugit id distinctio possimus neque.</p>
+		</main>
+		<script type="module">
+			const elements = document.querySelectorAll('[data-js*="a11yMenu"]');
+			if (elements.length) {
+				import('/a11yMenu.mjs')
+				.then(module => {
+					const a11yMenuModule = module.a11yMenu;
+					elements.forEach(element => {
+						new a11yMenuModule(element, element.dataset);
+					});
+				})
+			}
+		</script>
+	</body>
+</html>

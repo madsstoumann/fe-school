@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+	<head>
+		<title>Polyfill for IE</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="description" content="Polyfill for details/summary in IE / Edge">
+		<style>
+				/* Toggle Visibility */
+				_:-ms-lang(x), details:not([open]) > summary + * { display: none; }
+				_:-ms-lang(x), details[open="open"] > summary + * { display: block; }
+				/* Change <summary> to block-level (optional): */
+				_:-ms-lang(x), summary { display: block; }
+				/* Add triangles before <summary>-text (optional): */
+				_:-ms-lang(x), summary::before { content: '\25B6'; }
+				_:-ms-lang(x), details[open="open"] > summary::before { content: '\25BC'; }
+				/* If multiple levels, add appropiate CSS per level (optional), example: */
+				_:-ms-lang(x), details > summary + * > details > summary { padding-left: 1rem; }
+				_:-ms-lang(x), [role="menuitem"] { display: block; padding-left: 2.25rem; }
+		</style>
+	</head>
+	<body>
+		<header>
+			<!-- https://blocks3.stoumann.dk/ie_details.html -->
+
+			<nav aria-label="Main Navigation" class="c-mn">
+				<details class="c-mn__item c-mn__item--1">
+					<summary class="c-mn__item-name--1">
+						Books
+					</summary>
+					<div class="c-mn__panel--1" role="menu">
+						<details class="c-mn__item c-mn__item--2">
+							<summary class="c-mn__item-name--2">
+								Bestsellers
+							</summary>
+							<div class="c-mn__panel--2" role="menu">
+								<a class="c-mn__item-link--3" href="#1" role="menuitem">Stores' Bestsellers</a><a class="c-mn__item-link--3" href="#2" role="menuitem">Top 100</a><a class="c-mn__item-link--3" href="#3" role="menuitem">NY Times Bestsellers</a>
+							</div>
+						</details>
+						<details class="c-mn__item c-mn__item--2">
+							<summary class="c-mn__item-name--2">
+								Browse
+							</summary>
+							<div class="c-mn__panel--2" role="menu">
+								<a class="c-mn__item-link--3" href="#4" role="menuitem">Books by Author</a><a class="c-mn__item-link--3" href="#5" role="menuitem">Books by Series</a><a class="c-mn__item-link--3" href="#6" role="menuitem">Book Awards</a><a class="c-mn__item-link--3" href="#7" role="menuitem">Collectible Editions</a><a class="c-mn__item-link--3" href="#8" role="menuitem">Coming Soon by Date</a><a class="c-mn__item-link--3" href="#9" role="menuitem">Kids Books</a><a class="c-mn__item-link--3" href="#10" role="menuitem">New Releases</a><a class="c-mn__item-link--3" href="#11" role="menuitem">Teen Books</a><a class="c-mn__item-link--3" href="#12" role="menuitem">This Season's Most Anticipated Books</a><a class="c-mn__item-link--3" href="#13" role="menuitem">Top Books of the Month</a>
+							</div>
+						</details>
+						<details class="c-mn__item c-mn__item--2">
+							<summary class="c-mn__item-name--2">
+								Subjects
+							</summary>
+							<div class="c-mn__panel--2" role="menu">
+								<a class="c-mn__item-link--3" href="#14" role="menuitem">Biography</a><a class="c-mn__item-link--3" href="#15" role="menuitem">Business</a><a class="c-mn__item-link--3" href="#16" role="menuitem">Cookbooks, Food &amp; Wine</a><a class="c-mn__item-link--3" href="#17" role="menuitem">Current Affairs &amp; Politics</a><a class="c-mn__item-link--3" href="#18" role="menuitem">Diet, Health &amp; Fitness</a><a class="c-mn__item-link--3" href="#19" role="menuitem">Fiction</a><a class="c-mn__item-link--3" href="#20" role="menuitem">Graphic Novels &amp; Comics</a><a class="c-mn__item-link--3" href="#21" role="menuitem">History</a><a class="c-mn__item-link--3" href="#22" role="menuitem">Mystery &amp; Crime</a><a class="c-mn__item-link--3" href="#23" role="menuitem">Sci-Fi &amp; Fantasy</a>
+							</div>
+						</details>
+						<details class="c-mn__item c-mn__item--2">
+							<summary class="c-mn__item-name--2">
+								Discover
+							</summary>
+							<div class="c-mn__panel--2" role="menu">
+								<a class="c-mn__item-link--3" href="#24" role="menuitem">Book Graph™</a><a class="c-mn__item-link--3" href="#25" role="menuitem">Browsery</a><a class="c-mn__item-link--3" href="#26" role="menuitem">Readouts</a><a class="c-mn__item-link--3" href="#27" role="menuitem">Discover Categories</a>
+							</div>
+						</details>
+						<details class="c-mn__item c-mn__item--2">
+							<summary class="c-mn__item-name--2">
+								Featured
+							</summary>
+							<div class="c-mn__panel--2" role="menu">
+								<a class="c-mn__item-link--3" href="#28" role="menuitem">Boxed Sets™</a><a class="c-mn__item-link--3" href="#29" role="menuitem">Book Club</a><a class="c-mn__item-link--3" href="#30" role="menuitem">Classics</a><a class="c-mn__item-link--3" href="#31" role="menuitem">Exclusives</a><a class="c-mn__item-link--3" href="#32" role="menuitem">Outlet™</a><a class="c-mn__item-link--3" href="#33" role="menuitem">Signed Books</a><a class="c-mn__item-link--3" href="#34" role="menuitem">Trend Shop</a>
+							</div>
+						</details>
+						<details class="c-mn__item c-mn__item--2">
+							<summary class="c-mn__item-name--2">
+								Blogs
+							</summary>
+							<div class="c-mn__panel--2" role="menu">
+								<a class="c-mn__item-link--3" href="#35" role="menuitem">Podcast™</a><a class="c-mn__item-link--3" href="#36" role="menuitem">Biggest Books</a><a class="c-mn__item-link--3" href="#37" role="menuitem">Reads</a><a class="c-mn__item-link--3" href="#38" role="menuitem">Review</a><a class="c-mn__item-link--3" href="#39" role="menuitem">Sci-Fi &amp; Fantasy Blog</a><a class="c-mn__item-link--3" href="#40" role="menuitem">Press Blog</a>
+							</div>
+						</details>
+						<details class="c-mn__item c-mn__item--2">
+							<summary class="c-mn__item-name--2">
+								Special Values
+							</summary>
+							<div class="c-mn__panel--2" role="menu">
+								<a class="c-mn__item-link--3" href="#41" role="menuitem">Coupons &amp; Deals</a><a class="c-mn__item-link--3" href="#42" role="menuitem">New Releases &amp; Bestsellers from 20% Off</a><a class="c-mn__item-link--3" href="#43" role="menuitem">Sale</a>
+							</div>
+						</details>
+					</div>
+				</details>
+				<details class="c-mn__item c-mn__item--1">
+					<summary class="c-mn__item-name--1">
+						Comics
+					</summary>
+					<div class="c-mn__panel--1" role="menu">
+						<details class="c-mn__item c-mn__item--2">
+							<summary class="c-mn__item-name--2">
+								Bestsellers
+							</summary>
+							<div class="c-mn__panel--2" role="menu">
+								<a class="c-mn__item-link--3" href="#1" role="menuitem">Stores' Bestsellers</a><a class="c-mn__item-link--3" href="#2" role="menuitem">Top 100</a><a class="c-mn__item-link--3" href="#3" role="menuitem">NY Times Bestsellers</a>
+							</div>
+						</details>
+					</div>
+				</details>
+			</nav>
+		</header>
+
+		<script>
+		/* Basic polyfill for <details>, in ES5 */
+		(function detailsPolyfill() {
+			if (!("open" in document.createElement("details"))) {
+				var
+				details = document.querySelectorAll("details"),
+				len = details.length;
+
+				while (len--) {
+					details[len].firstElementChild.tabIndex = 0;
+					details[len].firstElementChild.addEventListener('keydown', function(event) {
+						if (event.key === 'Spacebar' || event.key === 'Enter') {
+							toggle.call(this.parentNode);
+						}
+					})
+					details[len].addEventListener("click", function(event) {
+						event.stopPropagation();
+						toggle.call(this);
+					});
+				}
+				function toggle() {
+					if (this.hasAttribute("open")) {
+						this.removeAttribute("open");
+					} else {
+						this.setAttribute("open", "open");
+					}
+				}
+			}
+		})();
+		</script>
+	</body>
+</html>
